@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "OCR 單字學習助手",
+  "version": "1.0.0",
+  "description": "選取網頁上的英文單字，由 Gemini AI 生成翻譯與例句，以卡片方式儲存學習",
+  "permissions": ["activeTab", "storage", "contextMenus", "tabs"],
+  "host_permissions": ["https://generativelanguage.googleapis.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "OCR 單字學習助手",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "commands": {
+    "activate-selection": {
+      "suggested_key": {
+        "default": "Alt+Shift+O",
+        "mac": "Alt+Shift+O"
+      },
+      "description": "啟用文字選取翻譯模式"
+    }
+  }
+}

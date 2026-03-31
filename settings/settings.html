@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <title>設定 — OCR 學習助手</title>
+  <link rel="stylesheet" href="settings.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>⚙️ 設定</h1>
+
+      <div class="field">
+        <label for="api-key">Gemini API Key</label>
+        <div class="input-row">
+          <input id="api-key" type="password" placeholder="AIza…" autocomplete="off" spellcheck="false" />
+          <button id="btn-toggle" class="btn-toggle" title="顯示／隱藏">👁</button>
+        </div>
+        <p class="help">
+          前往
+          <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">
+            Google AI Studio
+          </a>
+          免費取得 API Key
+        </p>
+      </div>
+
+      <div class="actions">
+        <button id="btn-save" class="btn-save">儲存設定</button>
+      </div>
+
+      <div id="status" class="status" hidden></div>
+    </div>
+  </div>
+  <script src="settings.js"></script>
+</body>
+</html>
